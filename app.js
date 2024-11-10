@@ -84,15 +84,37 @@ app.post("/register", (request, response) => {
     });
 });
 
+
+// user get endpoint
+app.get("/user/:id", (request, response) => {
+    // find the new user
+    User.findById(request.params.id, 'email -_id')
+      // return success if the new user is added to the database successfully
+      .then((result) => {
+        response.status(201).send({
+          message: "User found Successfully",
+          result,
+        });
+      })
+      // catch error if the new user wasn't added successfully to the database
+      .catch((error) => {
+        response.status(500).send({
+          message: "User does not exist",
+          error,
+        });
+      });
+});
+
 // project endpoint
 app.post("/project", (request, response) => {
 	// create a new user instance and collect the data
   	const project = new Project({
     	name: request.body.name, 
-		description: request.body.description,
-		owner: request.body.owner,
-		budget: request.body.budget,
-		type: request.body.type
+  		description: request.body.description,
+  		owner: request.body.owner,
+  		budget: request.body.budget,
+      timelimit: request.body.timelimit,
+  		type: request.body.type
 		//link: request.body.link,
   	});
 	// save the new user
@@ -114,14 +136,35 @@ app.post("/project", (request, response) => {
 		});
 });
 
-// project endpoint
+
+// product get endpoint
+app.get("/project/:id", (request, response) => {
+    // find the new user
+    Project.findById(request.params.id, 'name description type owner budget timelimit -_id')
+      // return success if the new user is added to the database successfully
+      .then((result) => {
+        response.status(201).send({
+          message: "Project found Successfully",
+          result,
+        });
+      })
+      // catch error if the new user wasn't added successfully to the database
+      .catch((error) => {
+        response.status(500).send({
+          message: "Project does not exist",
+          error,
+        });
+      });
+});
+
+// sceanario endpoint
 app.post("/scenario", (request, response) => {
 	// create a new user instance and collect the data
   	const scenario = new Scenario({
     	name: request.body.name, 
-		description: request.body.description,
-		owner: request.body.owner,
-		budget: request.body.budget
+  		description: request.body.description,
+  		owner: request.body.owner,
+  		budget: request.body.budget
 		//link: request.body.link,
   	});
 	// save the new user
@@ -143,14 +186,37 @@ app.post("/scenario", (request, response) => {
 		});
 });
 
-// project endpoint
+
+// scenario get endpoint
+app.get("/scenario/:id", (request, response) => {
+    // find the new user
+    Scenario.findById(request.params.id, 'name description owner budget -_id')
+      // return success if the new user is added to the database successfully
+      .then((result) => {
+        response.status(201).send({
+          message: "Scenario found Successfully",
+          result,
+        });
+      })
+      // catch error if the new user wasn't added successfully to the database
+      .catch((error) => {
+        response.status(500).send({
+          message: "Scenario does not exist",
+          error,
+        });
+      });
+});
+
+
+// subproject endpoint
 app.post("/subproject", (request, response) => {
 	// create a new user instance and collect the data
   	const subproject = new Subproject({
     	name: request.body.name, 
-		description: request.body.description,
-		owner: request.body.owner,
-		budget: request.body.budget
+		  description: request.body.description,
+		  owner: request.body.owner,
+		  budget: request.body.budget,
+      timelimit: request.body.timelimit
 		//link: request.body.link,
   	});
 	// save the new user
@@ -172,6 +238,76 @@ app.post("/subproject", (request, response) => {
 		});
 });
 
+
+// subproject endpoint
+app.get("/subproject/:id", (request, response) => {
+    // find the new user
+    Project.findById(request.params.id, 'name description owner budget timelimit -_id')
+      // return success if the new user is added to the database successfully
+      .then((result) => {
+        response.status(201).send({
+          message: "Subproject found Successfully",
+          result,
+        });
+      })
+      // catch error if the new user wasn't added successfully to the database
+      .catch((error) => {
+        response.status(500).send({
+          message: "Subproject does not exist",
+          error,
+        });
+      });
+});
+
+
+// comment endpoint
+app.post("/comment", (request, response) => {
+  // create a new user instance and collect the data
+    const comment = new Comment({
+      text: request.body.text, 
+      owner: request.body.owner,
+      score: 0.0 // Get Score from sentimental analysis Library
+    //link: request.body.link,
+    });
+  // save the new user
+  comment
+    .save()
+    // return success if the new user is added to the database successfully
+    .then((result) => {
+      response.status(201).send({
+        message: "Comment Created Successfully",
+        result,
+      });
+    })
+    // catch error if the new user wasn't added successfully to the database
+    .catch((error) => {
+      response.status(500).send({
+        message: "Error creating comment",
+        error,
+      });
+    });
+}); 
+
+
+// comment endpoint
+app.get("/comment/:id", (request, response) => {
+    // find the new user
+    Project.findById(request.params.id, 'text owner -_id')
+      // return success if the new user is added to the database successfully
+      .then((result) => {
+        response.status(201).send({
+          message: "Comment found Successfully",
+          result,
+        });
+      })
+      // catch error if the new user wasn't added successfully to the database
+      .catch((error) => {
+        response.status(500).send({
+          message: "Comment does not exist",
+          error,
+        });
+      });
+});
 
 // login endpoint
 app.post("/login", (request, response) => {
