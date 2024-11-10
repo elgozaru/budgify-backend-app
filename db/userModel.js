@@ -13,18 +13,18 @@ const UserSchema = new mongoose.Schema({
     required: [true, "Please provide a password!"],
     unique: false,
   },
-
+  /*
   username: {
     type: String,
     required: [true, "Please provide an username!"],
     unique: true,
-  },
-
+  },*/
+  /*
   role: {
     type: Number,
     required: [false, "Please provide a role!"],
     unique: false,
-  },
+  },*/
 });
 
 module.exports = mongoose.model.Users || mongoose.model("Users", UserSchema);
