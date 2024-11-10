@@ -1,8 +1,20 @@
 # budgify-backend-app
 
-## Deployment
-- *Backend* : budgify-backend-app.vercel.app
+### Deployment
+
+### Environment variables
+URL_DB = mongodb+srv://user:password@cluster0.5dltx.mongodb.net/authDB?retryWrites=true&w=majority&appName=Cluster0
+
+### Server Domains
+- *NodeJS Backend* : budgify-backend-app.vercel.app
 - *MongoDB* : mongodb+srv://chamibot:password@cluster0.5dltx.mongodb.net/authDB?retryWrites=true&w=majority&appName=Cluster0
+
+### Build
+npm install
+
+### Run 
+node ./index.js
+
 
 ## Endpoints
 
