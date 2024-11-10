@@ -8,6 +8,10 @@ const bodyParser = require('body-parser');
 // require database connection 
 const dbConnect = require("./db/dbConnect");
 const User = require("./db/userModel");
+const Project = require("./db/projectModel");
+const Subproject = require("./db/subprojectModel");
+const Scenario = require("./db/scenarioModel");
+const Comment = require("./db/commentModel");
 
 const auth = require("./auth");
 
