@@ -80,6 +80,94 @@ app.post("/register", (request, response) => {
     });
 });
 
+// project endpoint
+app.post("/project", (request, response) => {
+	// create a new user instance and collect the data
+  	const project = new Project({
+    	name: request.body.name, 
+		description: request.body.description,
+		owner: request.body.owner,
+		budget: request.body.budget,
+		type: request.body.type
+		//link: request.body.link,
+  	});
+	// save the new user
+	project
+		.save()
+		// return success if the new user is added to the database successfully
+		.then((result) => {
+		  response.status(201).send({
+		    message: "Project Created Successfully",
+		    result,
+		  });
+		})
+		// catch error if the new user wasn't added successfully to the database
+		.catch((error) => {
+		  response.status(500).send({
+		    message: "Error creating project",
+		    error,
+		  });
+		});
+});
+
+// project endpoint
+app.post("/scenario", (request, response) => {
+	// create a new user instance and collect the data
+  	const scenario = new Scenario({
+    	name: request.body.name, 
+		description: request.body.description,
+		owner: request.body.owner,
+		budget: request.body.budget
+		//link: request.body.link,
+  	});
+	// save the new user
+	scenario
+		.save()
+		// return success if the new user is added to the database successfully
+		.then((result) => {
+		  response.status(201).send({
+		    message: "Scenario Created Successfully",
+		    result,
+		  });
+		})
+		// catch error if the new user wasn't added successfully to the database
+		.catch((error) => {
+		  response.status(500).send({
+		    message: "Error creating scenario",
+		    error,
+		  });
+		});
+});
+
+// project endpoint
+app.post("/subproject", (request, response) => {
+	// create a new user instance and collect the data
+  	const subproject = new Subproject({
+    	name: request.body.name, 
+		description: request.body.description,
+		owner: request.body.owner,
+		budget: request.body.budget
+		//link: request.body.link,
+  	});
+	// save the new user
+	subproject
+		.save()
+		// return success if the new user is added to the database successfully
+		.then((result) => {
+		  response.status(201).send({
+		    message: "Subroject Created Successfully",
+		    result,
+		  });
+		})
+		// catch error if the new user wasn't added successfully to the database
+		.catch((error) => {
+		  response.status(500).send({
+		    message: "Error creating subproject",
+		    error,
+		  });
+		});
+});
+
 
 // login endpoint
 app.post("/login", (request, response) => {
