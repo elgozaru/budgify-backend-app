@@ -2,10 +2,6 @@
 const mongoose = require("mongoose");
 
 const SubprojectSchema = new mongoose.Schema({
-  id: {
-    type: Schema.ObjectId
-  },
-
   name: {
     type: String,
     required: [true, "Please provide a name!"],
@@ -19,7 +15,7 @@ const SubprojectSchema = new mongoose.Schema({
   },
 
   owner: {
-    type: String,
+    type: mongoose.Schema.ObjectId,
     required: [true, "Please provide an owner project!"],
     unique: false,
   },
@@ -27,6 +23,12 @@ const SubprojectSchema = new mongoose.Schema({
   budget: {
     type: Number,
     required: [true, "Please provide a budget limit!"],
+    unique: false,
+  },
+
+  timeLimit: {
+    type: Number,
+    required: [true, "Please provide a time limit!"],
     unique: false,
   },
   

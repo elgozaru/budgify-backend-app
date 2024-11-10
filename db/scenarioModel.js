@@ -2,10 +2,6 @@
 const mongoose = require("mongoose");
 
 const ScenarioSchema = new mongoose.Schema({
-  id: {
-    type: Schema.ObjectId
-  },
-
   name: {
     type: String,
     required: [true, "Please provide a name!"],
@@ -19,14 +15,8 @@ const ScenarioSchema = new mongoose.Schema({
   },
 
   owner: {
-    type: String,
+    type: mongoose.Schema.ObjectId,
     required: [true, "Please provide a user owner!"],
-    unique: false,
-  },
-
-  budget: {
-    type: Number,
-    required: [true, "Please provide a budget limit!"],
     unique: false,
   },
   
