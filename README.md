@@ -18,6 +18,33 @@
     "password":"budgify2"
 }
 
+#### Result :
+{
+    "message": "User Created Successfully",
+    "result": {
+        "email": "anemail@proton.me",
+        "password": "$2b$10$9Lz3bHM1Z9qqXeoIREUnOe6HcKV8RYueOkm4KFu1Pm8RUefd2sMI.",
+        "_id": "673090429fe33381235e7010",
+        "__v": 0
+    }
+}
+
+### User GET
+
+- Method : GET
+- URL : https://budgify-backend-app.vercel.app/user/_id
+
+#### Query Example:
+https://budgify-backend-app.vercel.app/user/673090429fe33381235e7010
+
+#### Result :
+{
+    "message": "User found Successfully",
+    "result": {
+        "email": "chamibot3@proton.me"
+    }
+}
+
 ### Login
 
 - Method : POST
