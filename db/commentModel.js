@@ -2,10 +2,6 @@
 const mongoose = require("mongoose");
 
 const CommentSchema = new mongoose.Schema({
-  id: {
-    type: Schema.ObjectId
-  },
-
   text: {
     type: String,
     required: [true, "Please provide a text!"],
@@ -19,7 +15,7 @@ const CommentSchema = new mongoose.Schema({
   },
 
   owner: {
-    type: String,
+    type: mongoose.Schema.ObjectId,
     required: [true, "Please provide a user owner!"],
     unique: false,
   },
