@@ -1,15 +1,16 @@
 # budgify-backend-app
 
 ## Deployment
-
+- *Backend* : budgify-backend-app.vercel.app
+- *MongoDB* : mongodb+srv://chamibot:password@cluster0.5dltx.mongodb.net/authDB?retryWrites=true&w=majority&appName=Cluster0
 
 ## Endpoints
 
 ### Register
 
-*Method : POST
-*URL : https://budgify-backend-app.vercel.app/register
-*Body : raw/json
+- Method : POST
+- URL : https://budgify-backend-app.vercel.app/register
+- Body : raw/json
 
 #### Body Example:
 {
@@ -19,9 +20,9 @@
 
 ### Login
 
-*Method : POST
-*URL : https://budgify-backend-app.vercel.app/login
-*Body : raw/json
+- Method : POST
+- URL : https://budgify-backend-app.vercel.app/login
+- Body : raw/json
 
 #### Body Example:
 {
@@ -32,9 +33,9 @@
 
 ### Projects
 
-*Method : POST
-*URL : https://budgify-backend-app.vercel.app/project
-*Body : raw/json
+- Method : POST
+- URL : https://budgify-backend-app.vercel.app/project
+- Body : raw/json
 
 #### Body Example:
 {
@@ -49,9 +50,9 @@
 
 ### Scenarios
 
-*Method : POST
-*URL : https://budgify-backend-app.vercel.app/scenario
-*Body : raw/json
+- Method : POST
+- URL : https://budgify-backend-app.vercel.app/scenario
+- Body : raw/json
 
 #### Body Example:
 {
@@ -64,9 +65,9 @@
 
 ### SubProjects
 
-*Method : POST
-*URL : https://budgify-backend-app.vercel.app/subproject
-*Body : raw/json
+- Method : POST
+- URL : https://budgify-backend-app.vercel.app/subproject
+- Body : raw/json
 
 #### Body Example:
 {
@@ -80,9 +81,9 @@
 
 ### Comments
 
-*Method : POST
-*URL : https://budgify-backend-app.vercel.app/comment
-*Body : raw/json
+- Method : POST
+- URL : https://budgify-backend-app.vercel.app/comment
+- Body : raw/json
 
 #### Body Example:
 {
